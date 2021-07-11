@@ -3,6 +3,8 @@
 #
 # Name: netdog
 #
+# Author: 閦蠱@virusmore
+#
 # Version: 0.2
 #
 # Description:
