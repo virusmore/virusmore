@@ -25,3 +25,10 @@
 	-- As Darwin and Linux are NOT the same in ping command options, so discover_cnet is
 		modified to detect the OS running. This means you can run this script on darwin &
 		linux from now on without considering the diffierences any more.
+
+ATTENTION$:
+1. Random ping is NOT implemented in this version, maybe next version.
+2. If default gateway IP are NOT *.*.*.1 or *.*.*.254, you may easily add new ones for your own in the
+   for-loop statement
+3. Keep it in mind that our team just focus on making IoT hacking much easier on mobile hacking platform,
+   so do NOT see things in the f*cking old view of PC or Laptop. Got it?
