@@ -14,8 +14,6 @@
 #		1: B-Sec Net
 #		2: C-Sec Net
 # $2 - network ID without masks, such as 10, 10.0, 10.10.0
-# $3 - num of packets to be sent by each ping command, default 1 packet
-# $4 - deadline of ping command, default 1 sec
 #
 #
 # Change Log:
@@ -28,6 +26,7 @@
 #	-- As Darwin and Linux are NOT the same in ping command options, so discover_cnet is
 #		modified to detect the OS running. This means you can run this script on darwin &
 #		linux from now on without considering the diffierences any more.
+#	-- have a new constant variable NDIS_IP_MAGIC to cope with possible new default gateways
 #
 
 #
@@ -103,8 +102,6 @@ function discover_cnet () {
 	# for gateway
 	for gateway in 1 254
 	do
-		#echo $NDIS_PING_COMM $1"."$gateway
-		#`$NDIS_PING_COMM $1"."$gateway`
 		case $os in
 			1)
 				echo ${gNDIS_PING_COMM_DARWIN} $1.$gateway
@@ -127,23 +124,6 @@ function discover_cnet () {
 			break
 		fi
 	done
-
-	# check common default gateway IP, such as "192.168.0.1"
-	#gateway=$1".1"
-	#`NDIS_PING_COMM $gateway`
-	#if [[ $? == 0 ]]
-	#then
-	#	echo $1".0/24">>$output
-	#	return
-	#fi
-
-	# if the gateway above NOT live, try another one, that is "192.168.0.254"
-	#gateway=$1".254"
-	#`NDIS_PING_COMM $gateway`
-	#if [[ $? == 0 ]]
-	#then
-	#	echo $1".0/24">>$output
-	#fi
 }
 
 #
@@ -197,24 +177,4 @@ case $1 in
 		;;
 	*)
 	show_menu
-
 esac
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
