@@ -27,6 +27,8 @@
 	-- As Darwin and Linux are NOT the same in ping command options, so discover_cnet is
 		modified to detect the OS running. This means you can run this script on darwin &
 		linux from now on without considering the diffierences any more.
+	-- In different aeras, gateway IP may verify, so you can easily modifiy NDIS_GATEWAY_MAGIC,
+		this script can ping new gateways
 
 ATTENTION$:
 1. Random ping is NOT implemented in this version, maybe next version.
